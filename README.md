@@ -226,10 +226,4 @@ terraform {
     - Check the S3 bucket `my-state-file-terraform-bucket` in the AWS Console.
     - Confirm `statefile.tfstate` exists and is updated after `terraform apply`.
 
-## 📡 **Final Architecture Overview**
-
-![image](https://github.com/user-attachments/assets/d0aeb79c-9ad8-46b5-bb0d-9f02c4e17bac)
-![image](https://github.com/user-attachments/assets/11df7516-bf3c-42b8-8bbc-517c5e298f4f)
-
-
 ##
