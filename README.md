@@ -80,7 +80,7 @@ systemctl enable docker
 mysql -h "${MYSQL_HOST}" -P 3306 -u "${MYSQL_USER}" -p"${MYSQL_PASSWORD}" -e "CREATE DATABASE IF NOT EXISTS ${MYSQL_DB};"
 
 # Pull and run the Docker image
-docker pull mahmoudhossam22mahmoud/getting-started
+docker pull hossam22mahmoud/getting-started
 docker run -d -p 80:3000 --name getting-started \\
   -e MYSQL_HOST="${MYSQL_HOST}" \\
   -e MYSQL_USER="${MYSQL_USER}" \\
