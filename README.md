@@ -16,7 +16,7 @@ This project deploys a web application on AWS using Terraform to provision infra
 **Key Components**:
 
 - **VPC**: A custom VPC with public and private subnets.
-- **EC2**: Hosts the web application in a Docker container (`mahmoudmabdelhamid/getting-started`).
+- **EC2**: Hosts the web application in a Docker container (`hossam22mahmoud/getting-started`).
 - **RDS**: MySQL database for persistent storage.
 - **Security Groups**: Controls traffic to EC2 (HTTP) and RDS (MySQL).
 - **Docker**: Runs the application, mapping port 3000 (container) to 80 (host).
@@ -52,7 +52,7 @@ This project deploys a web application on AWS using Terraform to provision infra
     - Update the system and install MariaDB client (`mariadb105`).
     - Install Docker and start the service.
     - Create the MySQL database on RDS.
-    - Pull and run the `mahmoudmabdelhamid/getting-started` Docker container.
+    - Pull and run the `hossam22mahmoud/getting-started` Docker container.
 
 **User Data Script Details** (`modules/ec2/templates/user_data.sh.tpl`):
 
@@ -80,13 +80,13 @@ systemctl enable docker
 mysql -h "${MYSQL_HOST}" -P 3306 -u "${MYSQL_USER}" -p"${MYSQL_PASSWORD}" -e "CREATE DATABASE IF NOT EXISTS ${MYSQL_DB};"
 
 # Pull and run the Docker image
-docker pull mahmoudmabdelhamid/getting-started
+docker pull mahmoudhossam22mahmoud/getting-started
 docker run -d -p 80:3000 --name getting-started \\
   -e MYSQL_HOST="${MYSQL_HOST}" \\
   -e MYSQL_USER="${MYSQL_USER}" \\
   -e MYSQL_PASSWORD="${MYSQL_PASSWORD}" \\
   -e MYSQL_DB="${MYSQL_DB}" \\
-  mahmoudmabdelhamid/getting-started
+  hossam22mahmoud/getting-started
 
 ```
 
@@ -123,7 +123,7 @@ This configuration enables **high availability**, **automatic health monitoring*
 
 ### Docker
 
-- **Image**: `mahmoudmabdelhamid/getting-started`
+- **Image**: `hossam22mahmoud/getting-started`
 - **Port Mapping**: 3000 (container) to 80 (host)
 - **Environment Variables**:
     - `MYSQL_HOST`: RDS endpoint
